@@ -10,7 +10,56 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand p-1" href="/">Bookers</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav text-light">
+            <li class="nav-item">
+              <a href="/", class="fas fa-home text-light"> Home</a>
+            </li>
+            <% if user_signed_in? %>
+            <li class="nav-item">
+              <a href="/users", class="fas fa-book-open text-light"> Users</a>
+            </li>
+            <li class="nav-item">
+              <a href="/books", class="fas fa-book-open text-light"> Books</a>
+            </li>
+            <li class="nav-item">
+              <a href="/users/sign_out", class="fas fa-sign-out-alt text-light", data-method="delete"> logout</a>
+            </li>
+            <% else %>
+            <li class="nav-item">
+              <a href="/homes/about", class="fas fa-link text-light"> About</a>
+            </li>
+            <li class="nav-item">
+              <a href="/users/sign_up", class="fas fa-user-plus text-light"> sign up</a>
+            </li>
+            <li class="nav-item">
+              <a href="/users/sign_in", class="fas fa-sign-in-alt text-light"> login</a>
+            </li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
   <body>
     <%= yield %>
+    <!--トグルを動かすために読み込む-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
   </body>
+
+  <footer>
+    <div class="container mt-5">
+      <div class="row d-flex justify-content-center">
+        <p>CopyRight Infratop.inc</p>
+      </div>
+    </div>
+  </footer>
 </html>
