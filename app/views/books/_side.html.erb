@@ -16,7 +16,7 @@
         <td><%= @user.introduction %></td>
       </tr>
     </table>
-    <%= f.submit "Edit" %>
+    <%= link_to "Edit", edit_user_path(@user.id) %>
     <% end %>
 
     <!--左側new-bookここから-->

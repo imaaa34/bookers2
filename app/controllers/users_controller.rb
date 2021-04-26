@@ -11,4 +11,9 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
+  #user-update
+  def edit
+  
+  end
+
 end
