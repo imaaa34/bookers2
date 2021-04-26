@@ -1,1 +1,26 @@
-<h2>Users/showページです</h2>
+<div class="container">
+  <div class="row">
+
+    <!--部分テンプレートの呼び出し-->
+    <%= render 'books/side' %>
+
+    <!--右側usersここから-->
+    <div class="col-lg-8 bg-info">
+      <h3>Books</h3>
+      <table>
+        <tr>
+          <th></th>
+          <th>Title</th>
+          <th>Opinion</th>
+        </tr>
+        <% @books.each do |book| %>
+        <tr>
+          <td><%= attachment_image_tag @user.profile_image, :profile_image, :fill, 10, 10, fallback: "no_image.jpg" %></td>
+          <td><%= book.title %></td>
+          <td><%= book.body %></td>
+        </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</div>
