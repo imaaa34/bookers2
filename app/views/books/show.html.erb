@@ -1,13 +1,28 @@
-<h3>Book detail</h3>
-  <table>
-    <tr>
-      <th></th>
-      <th>title</th>
-      <th>opinion</th>
-    </tr>
-    <tr>
-      <td><%= attachment_image_tag @user.profile_image, :profile_image, :fill, 30, 30, fallback: "no_image.jpg" %></td>
-      <td><%= @book.title %></td>
-      <td><%= @book.body %></td>
-    </tr>
-  </table>
+<div class="container">
+  <div class="row">
+
+    <!--部分テンプレートの呼び出し-->
+    <%= render 'books/side', book: @book, user: @user %>
+
+    <!--右側book-detailここから-->
+    <div class="col-lg-8 bg-info">
+      <h3>Book detail</h3>
+      <table>
+        <tr>
+          <th></th>
+          <th>title</th>
+          <th>opinion</th>
+        </tr>
+        <tr>
+          <td>
+            <%= link_to user_path(@user.id) do %><%= attachment_image_tag @user.profile_image, :profile_image, :fill, 10, 10, fallback: "no_image.jpg" %>
+            <div><%= @user.name %></div>
+            <% end %>
+          </td>
+          <td><%= link_to @book.title, book_path(@book.id) %></td>
+          <td><%= @book.body %></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
