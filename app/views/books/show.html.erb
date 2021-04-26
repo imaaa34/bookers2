@@ -1,0 +1,13 @@
+<h3>Book detail</h3>
+  <table>
+    <tr>
+      <th></th>
+      <th>title</th>
+      <th>opinion</th>
+    </tr>
+    <tr>
+      <td><%= attachment_image_tag @user.profile_image, :profile_image, :fill, 30, 30, fallback: "no_image.jpg" %></td>
+      <td><%= @book.title %></td>
+      <td><%= @book.body %></td>
+    </tr>
+  </table>
