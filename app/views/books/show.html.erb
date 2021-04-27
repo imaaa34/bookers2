@@ -10,14 +10,14 @@
       <table>
         <tr>
           <td>
-            <%= link_to user_path(@book.user_id) do %><%= attachment_image_tag @book.user, :profile_image, :fill, 30, 30, fallback: "no_image.jpg" %>
-            <div><%= @book.user.name %></div>
+            <%= link_to user_path(@bookd.user_id) do %><%= attachment_image_tag @bookd.user, :profile_image, :fill, 30, 30, fallback: "no_image.jpg" %>
+            <div><%= @bookd.user.name %></div>
             <% end %>
           </td>
-          <td><%= link_to @book.title, book_path(@book.id) %></td>
-          <td><%= @book.body %></td>
-          <td><%= link_to 'Edit', edit_book_path(@book.id), class:"btn btn-sm-success" %></td>
-          <td><%= link_to 'Destroy', book_path(@book.id), method: :delete, class:"btn btn-sm-danger", "data-confirm" => "Are you sure to delete this book?" %></td>
+          <td><%= link_to @bookd.title, book_path(@bookd.id) %></td>
+          <td><%= @bookd.body %></td>
+          <td><%= link_to 'Edit', edit_book_path(@bookd.id), class:"btn btn-sm-success" %></td>
+          <td><%= link_to 'Destroy', book_path(@bookd.id), method: :delete, class:"btn btn-sm-danger", "data-confirm" => "Are you sure to delete this book?" %></td>
         </tr>
       </table>
     </div>
