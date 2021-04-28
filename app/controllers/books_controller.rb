@@ -31,6 +31,8 @@ class BooksController < ApplicationController
     @user = User.find(current_user.id)
     #book-detail
     @bookd = Book.find(params[:id])
+    #edit,destroyボタン
+    @userd = Book.find(@bookd.user_id)
   end
 
   def update
@@ -48,6 +50,8 @@ class BooksController < ApplicationController
     book.destroy
     redirect_to books_path
   end
+
+
 
   private
 

@@ -16,8 +16,10 @@
           </td>
           <td><%= link_to @bookd.title, book_path(@bookd.id) %></td>
           <td><%= @bookd.body %></td>
+          <% if @userd.id == current_user.id %>
           <td><%= link_to 'Edit', edit_book_path(@bookd.id), class:"btn btn-sm-success" %></td>
           <td><%= link_to 'Destroy', book_path(@bookd.id), method: :delete, class:"btn btn-sm-danger", "data-confirm" => "Are you sure to delete this book?" %></td>
+          <% end %>
         </tr>
       </table>
     </div>
