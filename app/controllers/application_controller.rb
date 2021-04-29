@@ -7,6 +7,16 @@ class ApplicationController < ActionController::Base
     user_path(resource)
   end
 
+  def after_inactive_sign_up_path_for(resource)
+    flash[:notice] = "Welcome! You have signed up successfully."
+    user_path(resource)
+  end
+
+  def after_sign_out_path_for(resource)
+    homes_about_path
+  end
+
+
   protected
 
   def configure_permitted_parameters
