@@ -1,11 +1,13 @@
 <div class="container">
   <div class="row">
 
+    <div class="col-md-3">
     <!--部分テンプレートの呼び出し-->
     <%= render 'books/side', user: @user, book: @book %>
+    </div>
 
     <!--右側book-detailここから-->
-    <div class="col-lg-8 bg-info">
+    <div class="col-md-8 offset-md-1">
       <h3>Book detail</h3>
       <table>
         <tr>

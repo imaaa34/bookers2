@@ -24,6 +24,9 @@ class BooksController < ApplicationController
 
   def edit
     @book = Book.find(params[:id])
+    unless @book.user_id == current_user.id
+      redirect_to books_path
+    end
   end
 
   def show
@@ -50,7 +53,6 @@ class BooksController < ApplicationController
     book.destroy
     redirect_to books_path
   end
-
 
 
   private

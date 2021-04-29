@@ -1,5 +1,4 @@
-<div class="col-lg-4 bg-success">
-    <!--左側user-infoここから-->
+ <!--左側user-infoここから-->
     <h3>User info</h3>
     <%= form_with model:user, local:true do |f| %>
     <table>
@@ -16,7 +15,7 @@
         <td><%= user.introduction %></td>
       </tr>
     </table>
-    <%= link_to "Edit", edit_user_path(user.id) %>
+    <%= link_to edit_user_path(user.id), class:"btn btn-outline-secondary" do %><i class="fas fa-user-cog"></i><% end %>
     <% end %>
 
     <!--左側new-bookここから-->
@@ -26,6 +25,5 @@
       <%= f.text_field :title %>
       <label>Opinion</label>
       <%= f.text_area :body %>
-      <%= f.submit 'Create book' %>
+      <%= f.submit 'Create Book', class:"btn btn-success" %>
     <% end %>
-</div>
