@@ -10,8 +10,11 @@ class BooksController < ApplicationController
   end
 
   def create
+    #user-info
     @user = User.find(current_user.id)
+    #books
     @books = Book.all
+    #new-book
     @book = Book.new(book_params)
     @book.user_id = current_user.id
     if @book.save
@@ -30,12 +33,12 @@ class BooksController < ApplicationController
   end
 
   def show
-    @book = Book.new
+    #user-info
     @user = User.find(current_user.id)
+    #new-book
+    @book = Book.new
     #book-detail
     @bookd = Book.find(params[:id])
-    #edit,destroyボタン
-    @userd = Book.find(@bookd.user_id)
   end
 
   def update
