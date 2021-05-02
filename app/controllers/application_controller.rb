@@ -3,12 +3,6 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!, except: [:top, :about]
 
   def after_sign_in_path_for(resource)
-    flash[:notice] = "Signed in successfully."
-    user_path(resource)
-  end
-
-  def after_inactive_sign_up_path_for(resource)
-    flash[:notice] = "Welcome! You have signed up successfully."
     user_path(resource)
   end
 
