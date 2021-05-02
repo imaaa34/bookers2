@@ -3,7 +3,7 @@
     <%= form_with model:user, local:true do |f| %>
     <table class="table my-3">
       <tr class="m-2">
-        <th><%= attachment_image_tag user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %></th>
+        <th><%= attachment_image_tag user, :profile_image, fallback: "no_image.jpg", size: "100x100" %></th>
         <th></th>
       </tr>
       <tr class="m-2">
